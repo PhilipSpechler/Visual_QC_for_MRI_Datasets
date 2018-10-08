@@ -50,6 +50,7 @@ The assumed directory structure is as followed:
 >- path2anat -or- path2fmri  
 >    - collection of subjects directories  
 >        - whole-brain anatomical or functional images  
+
 For example, studyXYZ with 3 subjects should be organized like this: 
 >/StudyXYZ/Subject1/swau_preprocessed_image.nii  
 >/StudyXYZ/Subject2/swau_preprocessed_image.nii  
