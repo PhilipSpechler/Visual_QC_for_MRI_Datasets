@@ -1,6 +1,7 @@
 # Visual QC for MRI Datasets
-This python script partially automates the visual QC process for MRI datasets by looping through a user supplied list of subjects to be
-visually inspected. Quality control is a laborious yet crucial step to ensure MRI datasets are acceptable for further analysis.
+This python script partially automates the visual QC process for MRI datasets by looping through a user
+supplied list of subjects to be visually inspected. Quality control is a laborious yet crucial step to ensure MRI datasets are
+acceptable for further analysis.
 
 This script assumes some preprocessing of the whole-brain T1 weighted anatomical image (i.e., VBM).
 And some preprocessing of whole-brain T2* fMRI images (i.e., functional preprocessing). 
@@ -13,8 +14,8 @@ a passing or failing of quality control. Alternatively, the user may specify 'ch
 After each step, the user may input a comment specific to their score. At the end of a subject, the user may make overall comments
 related to that subject's quality. If no image is found, a score of "MissingData" is automatically populated into the logfile.
 
-Built in user friendly options like basic afni controls, subject counting, input error checking, and quit functions, all come standard!
-
+Built in user friendly options like basic afni controls, subject counting, input error checking, and quit functions, all come 
+standard!  
 ## Dependencies
 The following must be installed prior to using this script--
 
@@ -27,24 +28,23 @@ The user's working directory ('workdir') must contain the following files. Stock
   
   1.) vis_QC_2.8.py --> the python QC script itself
   
-  2.) hotsub.txt --> a one-line textfile of the subject ID being inspected. This file is auto-updated during QC.
+  2.) hotsub.txt --> a one-line textfile of the subject ID being inspected. Start with the first subject in your allsubs.txt file. 
+  This file is auto-updated (changes) during QC. 
   
   3.) allsubs.txt --> a newline delimited textfile containing all subject IDs to QC
   
   4.) logfile.csv --> the logfile where QC metrics are automatically updated and saved after each subject
 
-**It is also expected that a backup directory is provided.**
-Ideally, the backup directory is a remote data server, google drive, etc. in case a lab rat eats your computer. 
-  
 ## Mechanics
 Essentially, this script is a wrapper around the 'afni -dset ' command, and python's "raw_input" command.
 
-To begin, open up a terminal, cd to the working directory, then call up the script!  
->cd \<workingdirectory>  
->python vis_QC_2.8.py
-
-**It is recommended the user closes the AFNI window before reutrning to the terminal to input their assessment**
-**Otherwise, you will have too many AFNI windows open and risk confusing which image is truly being inspected**
+To begin, you must  
+1.) Edit the allsubs.txt and hotsub.txt files to match the subject IDs of your dataset.  
+2.) Edit the vis_QC_2.8.py paths to match your directory naming.  
+<ul> <li>required: workdir (line 42), path2anat (line 51), path2fmri (line 54), path2backup (line58).</li></ul> 
+    
+**It is expected that a backup directory is provided.**
+Ideally, the backup directory is a remote data server, google drive, etc. in case a lab rat eats your computer. 
 
 The assumed directory structure is as followed:
 >- path2anat -or- path2fmri  
@@ -56,8 +56,12 @@ For example, studyXYZ with 3 subjects should be organized like this:
 >/StudyXYZ/Subject2/swau_preprocessed_image.nii  
 >/StudyXYZ/Subject3/swau_preprocessed_image.nii  
 
-After each subject is inspected, the user will be asked if they want to save their work. If they chose to save, the logfile will be
-updated and saved in both the working directory and backup directory.
+To start your QC project, open up a terminal, cd to the working directory, then call up the script!  
+>cd \<workingdirectory>  
+>python vis_QC_2.8.py
+
+**When running, it is recommended the user closes the AFNI window before reutrning to the terminal to input their assessment**
+**Otherwise, you will have too many AFNI windows open and risk confusing which image is truly being inspected**
 
 ### Background
 Developing this code was my first project on day 1 of my graduate student career and has gone through major overhaul since August 2014.
