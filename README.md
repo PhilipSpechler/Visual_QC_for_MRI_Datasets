@@ -62,7 +62,7 @@ For example, studyXYZ with 3 subjects should be organized like this:
 Ideally, the backup directory is a remote data server, google drive, etc. in case a lab rat eats your computer.
 
 To start your QC project, open up a terminal, cd to the working directory, then call up the script!  
->cd \<workingdirectory>  
+>cd \<workdir>  
 >python vis_QC_2.8.py
 
 **When running, it is recommended the user closes the AFNI window before reutrning to the terminal to input their assessment**
