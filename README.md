@@ -41,12 +41,12 @@ The user's working directory ('workdir') must contain the following files. Stock
   4.) logfile.csv --> the logfile where QC metrics are automatically updated and saved after each subject
 
 ## Mechanics
-Essentially, this script is a wrapper around the 'afni -dset ' command, and using python's "raw_input" command.
+Essentially, this script is a wrapper around the 'afni -dset ' command, and using python's "raw_input" commands.
 
 To begin, you must  
-1.) Edit the allsubs.txt and hotsub.txt files to match the subject IDs of your dataset.  
-2.) Edit the vis_QC_2.8.py paths to match your directory naming.  
-<ul> <li>required: workdir (line 42), path2anat (line 51), path2fmri (line 54), path2backup (line58).</li></ul> 
+1.) Edit the 'allsubs.txt' and 'hotsub.txt' files to match the subject IDs of your dataset.  
+2.) Edit four paths in the 'vis_QC_2.8.py' script to match your directory naming.  
+<ul> <li>Edits required: workdir (line 42), path2anat (line 51), path2fmri (line 54), path2backup (line58).</li></ul> 
 
 The assumed directory structure is as followed:
 >- path2anat -or- path2fmri  
