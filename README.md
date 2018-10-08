@@ -69,7 +69,8 @@ To start your QC project, open up a terminal, cd to the working directory, then 
 **Otherwise, you will have too many AFNI windows open and risk confusing which image is truly being inspected**
 
 ### Background
-Developing this code was my first project on day 1 of my graduate student career and has gone through major overhaul since August 2014.
-It was initially developed to be used for the larger [IMAGEN project]('www.imagen-europe.com').
+Developing this code was my first project on day 1 of my graduate student career at the university of vermont, and has gone through 
+major overhaul since August 2014 (hence version #2.8). It was initially developed to be used for the larger [IMAGEN project]
+('https://imagen-europe.com').
 
 Please [email me]('pspechle@uvm.edu') with any questions!
