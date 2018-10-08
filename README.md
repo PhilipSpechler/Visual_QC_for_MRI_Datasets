@@ -43,14 +43,13 @@ To begin, open up a terminal, cd to the working directory, then call up the scri
 >cd \<workingdirectory>  
 >python vis_QC_2.8.py
 
-
+**It is recommended the user closes the AFNI window before reutrning to the terminal to input their assessment**
+**Otherwise, you will have too many AFNI windows open and risk confusing which image is truly being inspected**
 
 The assumed directory structure is as followed:
-
 >- path2anat -or- path2fmri  
 >    - collection of subjects directories  
 >        - whole-brain anatomical or functional images  
-
 For example, studyXYZ with 3 subjects should be organized like this: 
 >/StudyXYZ/Subject1/swau_preprocessed_image.nii  
 >/StudyXYZ/Subject2/swau_preprocessed_image.nii  
