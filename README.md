@@ -8,10 +8,8 @@ Built in user friendly options like basic afni controls, subject counting, input
 
 ## Dependencies
 The following must be installed prior to using this script--
-
-  * [AFNI]('https://afni.nimh.nih.gov') ---> installed in the default '~/abin' directory
-  
-  * python 2.x, and numpy
+ * [AFNI] ('afni.nimh.nih.gov') ---> installed in the default '~/abin' directory
+ * python 2.x, and numpy
 
 The user's working directory ('workdir') is must have the following files. Stock versions are supplied in this repo.
 
