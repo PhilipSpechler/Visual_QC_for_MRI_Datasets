@@ -1,22 +1,23 @@
 # Visual QC for MRI Datasets
-This python script partially automates the visual QC process for MRI datasets by looping through a user
-supplied list of subjects to be visually inspected. Quality control is a laborious yet crucial step to ensure MRI datasets are
-acceptable for further analysis.
+Quality control is a laborious yet crucial step to ensure MRI datasets are acceptable for further analysis. This python script partially 
+automates the visual QC process for MRI datasets by looping through a user supplied list of subjects to be visually inspected.
 
-This script assumes some preprocessing of the whole-brain T1 weighted anatomical image (i.e., VBM).
-And some preprocessing of whole-brain T2* fMRI images (i.e., functional preprocessing).  
+This script expects some preprocessing has already been applied to the the whole-brain T1-weighted anatomical image (i.e., VBM).
+And expects some preprocessing of whole-brain T2* fMRI images (i.e., functional preprocessing). This code was written for three fMRI 
+tasks-- face processing ("faces"), monetary-incentive delay ("MID") and stop signal task ("ss").
 
-This code was written for three fMRI tasks-- face processing ("faces"), monetary-incentive delay ("MID") and stop signal task ("ss").
-Please edit code where necessary to suit your study or ask me for help (email address below).
+Please edit the code where necessary to suit your study or ask me for help (email address below).
 
+## Features
 All MRI visualizations are automated using AFNIs standard display.  
-All quality assessments are recorded through the terminal window.  
-A csv file is automatically appended and backed up after each subject.
+All quality assessments are recorded and reviewed through the terminal window.  
+A csv logfile is automatically appended and backed up after each subject.
 
 After displaying an image, the user enters their quality control assessment into the terminal window. Binary 'yes' or 'no' scores denote
 a passing or failing of quality control. Alternatively, the user may specify 'check' which denotes a second opinion is needed.
-After each step, the user may input a comment specific to their score. At the end of a subject, the user may make overall comments
-related to that subject's quality. If no image is found, a score of "MissingData" is automatically populated into the logfile.
+After each step, the user may input a comment specific to the image being viewed. At the end of a subject, the user may make 
+overall comments related to that subject's quality. If no image is found, a score of "MissingData" is automatically populated into the 
+logfile.
 
 Built in user friendly options like basic afni controls, subject counting, input error checking, and quit functions, all come 
 standard!  
