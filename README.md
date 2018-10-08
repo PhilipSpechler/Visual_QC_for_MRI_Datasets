@@ -10,7 +10,7 @@ Built in user friendly options like basic afni controls, subject counting, input
 The following must be installed prior to using this script--
 
 <ul>
-  <li><a href='afni.nimh.nih.gov'> AFNI </a></li>
+  <li><a href='https://afni.nimh.nih.gov'> AFNI </a></li>
   <li>python2.x, and numpy</li>
 </ul>
  * [AFNI] (') ---> installed in the default '~/abin' directory
