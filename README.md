@@ -4,9 +4,13 @@ supplied list of subjects to be visually inspected. Quality control is a laborio
 acceptable for further analysis.
 
 This script assumes some preprocessing of the whole-brain T1 weighted anatomical image (i.e., VBM).
-And some preprocessing of whole-brain T2* fMRI images (i.e., functional preprocessing). 
+And some preprocessing of whole-brain T2* fMRI images (i.e., functional preprocessing).  
 
-All MRI visualizations are automated using AFNIs standard display. And all quality assessments are recorded through the terminal window.
+This code was written for three fMRI tasks-- face processing ("faces"), monetary-incentive delay ("MID") and stop signal task ("ss").
+Please edit code where necessary to suit your study or ask me for help (email address below).
+
+All MRI visualizations are automated using AFNIs standard display.  
+All quality assessments are recorded through the terminal window.  
 A csv file is automatically appended and backed up after each subject.
 
 After displaying an image, the user enters their quality control assessment into the terminal window. Binary 'yes' or 'no' scores denote
@@ -36,15 +40,12 @@ The user's working directory ('workdir') must contain the following files. Stock
   4.) logfile.csv --> the logfile where QC metrics are automatically updated and saved after each subject
 
 ## Mechanics
-Essentially, this script is a wrapper around the 'afni -dset ' command, and python's "raw_input" command.
+Essentially, this script is a wrapper around the 'afni -dset ' command, and using python's "raw_input" command.
 
 To begin, you must  
 1.) Edit the allsubs.txt and hotsub.txt files to match the subject IDs of your dataset.  
 2.) Edit the vis_QC_2.8.py paths to match your directory naming.  
 <ul> <li>required: workdir (line 42), path2anat (line 51), path2fmri (line 54), path2backup (line58).</li></ul> 
-    
-**It is expected that a backup directory is provided.**
-Ideally, the backup directory is a remote data server, google drive, etc. in case a lab rat eats your computer. 
 
 The assumed directory structure is as followed:
 >- path2anat -or- path2fmri  
@@ -55,6 +56,9 @@ For example, studyXYZ with 3 subjects should be organized like this:
 >/StudyXYZ/Subject1/swau_preprocessed_image.nii  
 >/StudyXYZ/Subject2/swau_preprocessed_image.nii  
 >/StudyXYZ/Subject3/swau_preprocessed_image.nii  
+
+**It is expected that a backup directory (set in line58) is provided.**
+Ideally, the backup directory is a remote data server, google drive, etc. in case a lab rat eats your computer.
 
 To start your QC project, open up a terminal, cd to the working directory, then call up the script!  
 >cd \<workingdirectory>  
