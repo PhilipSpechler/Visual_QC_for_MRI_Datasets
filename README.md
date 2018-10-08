@@ -70,7 +70,6 @@ To start your QC project, open up a terminal, cd to the working directory, then 
 
 ### Background
 Developing this code was my first project on day 1 of my graduate student career at the university of vermont, and has gone through 
-major overhaul since August 2014 (hence version #2.8). It was initially developed to be used for the larger [IMAGEN project]
-(https://imagen-europe.com).
+major overhaul since August 2014 (hence version #2.8). It was initially developed to be used for the larger <a href='https://imagen-europe.com'>IMAGEN project</a>.
 
 Please [email me]('pspechle@uvm.edu') with any questions!
