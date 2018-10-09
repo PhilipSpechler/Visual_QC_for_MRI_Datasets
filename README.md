@@ -22,8 +22,7 @@ logfile.
 Built in user friendly options like basic afni controls, subject counting, input error checking, and quit functions, all come 
 standard!  
 ## Dependencies
-The following must be installed prior to using this script--
-
+The following must be installed prior to using this script--d
 <ul>
   <li><a href='https://afni.nimh.nih.gov'> AFNI</a> ---> installed in the default '~/abin' directory</li>
   <li>python2.x, and numpy</li>
@@ -45,22 +44,46 @@ Essentially, this script is a wrapper around the 'afni -dset ' command, and usin
 
 To begin, you must  
 1.) Edit the 'allsubs.txt' and 'hotsub.txt' files to match the subject IDs of your dataset.  
-2.) Edit four paths in the 'vis_QC_2.8.py' script to match your directory naming.  
-<ul> <li>Edits required: workdir (line 42), path2anat (line 51), path2fmri (line 54), path2backup (line58).</li></ul> 
+2.) Edit four paths in the 'vis_QC_2.8.py' script to match your directory naming--
+<ul>
+  <li>Edits required: 
+    <ul><li>workdir (line 42):</li>
+      <ul><li>Directory containing this script, textfiles, and logfile</li></ul>
+    </ul>
+    <ul><li>path2anat (line 51):</li>
+      <ul><li>Directory containing subject folders with anatomical images</li></ul>
+    </ul>
+    <ul><li>path2fmri (line 54):</li>
+      <ul><li>Directory containing subject folders with functional images</li></ul>
+    </ul>
+    <ul><li>path2backup (line58):</li>
+      <ul><li>Directory containing a duplicate of the logfile</li></ul>
+      <ul><li><b>Please copy the logfile.csv to this directory before starting your first subject</b></li></ul>
+      </ul>
+  </li></ul>
 
-The assumed directory structure is as followed:
->- path2anat -or- path2fmri  
+The assumed directory structure for *anatomical* data is as followed:
+>- path2anat
 >    - collection of subjects directories  
->        - whole-brain anatomical or functional images  
+>        - whole-brain anatomical images (output from VBM preprocessing)  
 
-For example, studyXYZ with 3 subjects should be organized like this: 
->/StudyXYZ/Subject1/swau_preprocessed_image.nii  
->/StudyXYZ/Subject2/swau_preprocessed_image.nii  
->/StudyXYZ/Subject3/swau_preprocessed_image.nii  
+The assumed directory structure for *fMRI* data is as followed:
+>- path2fmri
+>    - collection of subjects directories  
+>        - 'EPI_\<name_of_fMRI_task>'  
+>            - whole-brain fMRI images (output from fMRI preprocessing)  
+
+For example, studyXYZ with 3 subjects with face processing fMRI should be organized like this: 
+>/StudyXYZ/Subject1/EPI_faces/swau_preprocessed_image.nii  
+>/StudyXYZ/Subject2/EPI_faces/swau_preprocessed_image.nii  
+>/StudyXYZ/Subject3/EPI_faces/swau_preprocessed_image.nii  
+
+To change the names of the three fMRI tasks to match your dataset, edit lines 484, 492, and 500.
 
 **It is expected that a backup directory (set in line58) is provided.**
 Ideally, the backup directory is a remote data server, google drive, etc. in case a lab rat eats your computer.
 
+## Getting Started
 To start your QC project, open up a terminal, cd to the working directory, then call up the script!  
 >cd \<workdir>  
 >python vis_QC_2.8.py
