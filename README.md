@@ -39,11 +39,11 @@ The user's working directory ('workdir') must contain the following files. Stock
   
   4.) logfile.csv --> the logfile where QC metrics are automatically updated and saved after each subject
 
-## Mechanics
+## Mechanics and Setup
 Essentially, this script is a wrapper around the 'afni -dset ' command, and using python's "raw_input" commands.
 
 To begin, you must  
-1.) Edit the 'allsubs.txt' and 'hotsub.txt' files to match the subject IDs of your dataset.  
+1.) Edit 'allsubs.txt' to contain all subject IDs of your dataset, and 'hotsub.txt' to contain your first subject.
 2.) Edit four paths in the 'vis_QC_2.8.py' script to match your directory naming--
 <ul>
   <li>Edits required: 
@@ -84,7 +84,7 @@ To change the names of the three fMRI tasks to match your dataset, edit lines 48
 Ideally, the backup directory is a remote data server, google drive, etc. in case a lab rat eats your computer.
 
 ## Getting Started
-To start your QC project, open up a terminal, cd to the working directory, then call up the script!  
+To start your QC project after completing the setup, open up a terminal, cd to the working directory, then call up the script!  
 >cd \<workdir>  
 >python vis_QC_2.8.py
 
